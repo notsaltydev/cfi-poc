@@ -1,0 +1,95 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  background-color: #F8F9FB;
+  min-height: 100vh;
+}
+
+.header {
+  margin: 32px 0;
+}
+
+.box-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: .25rem;
+  box-shadow: 0 0.5rem 1rem 0 rgba(44, 51, 73, .1);
+}
+
+.form-group {
+  margin-bottom: 0;
+}
+
+.form-container {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+  padding: 16px 24px;
+}
+
+td, th {
+  display: flex;
+  align-items: center;
+}
+
+.table {
+  margin-bottom: 0;
+
+  thead {
+    th {
+      border-bottom: 0;
+    }
+  }
+}
+
+th {
+  &:first-child {
+    padding-left: 24px;
+  }
+
+  &:last-child {
+    padding-right: 24px;
+  }
+}
+
+td {
+  &:last-child {
+    padding-right: 24px;
+  }
+}
+
+.filter-title {
+  margin-right: 8px;
+}
+
+.btn-link {
+  margin-left: 8px;
+}
+
+.course-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.course-name {
+  font-weight: 600;
+}
+
+.instructors-container {
+  font-weight: 600;
+}
+
+.instructor {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.course-status {
+  border: 1px solid #ECECEC;
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 12px;
+}

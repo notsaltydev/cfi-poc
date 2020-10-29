@@ -1,0 +1,40 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  background-color: #F8F9FB;
+  min-height: 100vh;
+}
+
+.header {
+  margin: 32px 0;
+}
+
+.box-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: .25rem;
+  box-shadow: 0 0.5rem 1rem 0 rgba(44, 51, 73, .1);
+  padding: 24px;
+}
+
+.title {
+  font-weight: 600;
+  padding-bottom: 16px;
+}
+
+.row {
+
+}
+
+.images-container {
+  display: flex;
+  padding: 24px;
+  background-color: #F8F9FB;
+  border-radius: 4px;
+
+  .image {
+    padding: 4px;
+    max-width: 150px;
+  }
+}

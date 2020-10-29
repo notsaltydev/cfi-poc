@@ -1,0 +1,28 @@
+<div *ngIf="course" class="container">
+    <h2 class="header">Course {{course.name}}</h2>
+    <div class="box-container">
+        <div class="row">
+            <div class="col-sm">
+                <span class="title">Course Name</span>
+                <input [(ngModel)]="course.name" class="form-control" name="course-name" type="text"/>
+            </div>
+            <div class="col-sm">
+                <span class="title">Course Status</span>
+                <input class="form-control" name="course-status" type="text"/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <span class="title">Course card image</span>
+                <div class="images-container">
+                    <img *ngFor="let image of course.images" [src]="image" class="image">
+                </div>
+            </div>
+            <div class="col-sm">
+                <span class="title">Instructor</span>
+                <input class="form-control" name="course-instructor" type="text"/>
+            </div>
+        </div>
+    </div>
+</div>
+

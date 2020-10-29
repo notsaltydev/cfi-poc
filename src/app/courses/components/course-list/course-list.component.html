@@ -1,0 +1,50 @@
+<div class="container">
+    <h2 class="header">Courses</h2>
+    <div class="box-container">
+        <form class="form-group form-inline">
+            <div class="form-container">
+                <span class="filter-title">Filter By:</span>
+                <select [formControl]="status" class="custom-select" name="pageSize" style="width: auto">
+                    <option [ngValue]="'DEFAULT'" disabled selected>Course status</option>
+                    <option [ngValue]="'DRAFT'">Draft</option>
+                    <option [ngValue]="'PUBLISHED'">Published</option>
+                </select>
+                <button (click)="clearStatus()" class="btn btn-link" type="button">Clear</button>
+                <input [formControl]="searchTerm" class="form-control ml-auto" name="searchTerm"
+                       placeholder="Search courses"
+                       type="text"/>
+            </div>
+        </form>
+        <table class="table">
+            <thead>
+            <tr class="d-flex">
+                <th class="col-1">ID</th>
+                <th class="col-2">Image</th>
+                <th class="col-7">Name</th>
+                <th class="col-2">Status</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let course of filteredCourses$ | async" class="d-flex">
+                <th class="col-1" scope="row">{{ course.id }}</th>
+                <td class="col-2">
+                    <img [src]="course.imageUrl" class="course-image" style="width: 54px">
+                </td>
+                <td class="col-7 course-info">
+                    <a [routerLink]="'/courses/' + course.id" class="course-name">{{course.name}}</a>
+                    <span *ngIf="course.instructors.length" class="instructors-container">
+                        Instructors:
+                        <span *ngFor="let instructor of course.instructors; let isLast=last" class="instructor">
+                            {{instructor.name}}{{isLast ? '' : ', '}}
+                        </span>
+                    </span>
+                </td>
+                <td class="col-2">
+                    <span class="course-status">{{course.status}}</span>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
